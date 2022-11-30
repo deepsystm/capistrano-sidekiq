@@ -23,11 +23,6 @@ module Capistrano
 
     def systemd_command(*args)
       command = [fetch(:systemctl_bin)]
-
-      unless fetch(:service_unit_user) == :system
-        command << "--user"
-      end
-
       command + args
     end
 
